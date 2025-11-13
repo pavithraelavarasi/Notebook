@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <script type="module" src="app.js"></script>
+  <head>
+    <title>Notebook App - Minimal UI</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.4/dist/mermaid.esm.min.mjs";
+      window.mermaid = mermaid;
+      mermaid.initialize({ startOnLoad: false });
+    </script>
+  </head>
 
-<head>
-  <title>Notebook App - Minimal UI</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.4/dist/mermaid.esm.min.mjs";
-    window.mermaid = mermaid;
-    mermaid.initialize({ startOnLoad: false });
-  </script>
-</head>
-<body>
-  <header>
-    <h1>MyMind Notebook</h1>
-    <input id="searchBox" type="text" placeholder="Search notes..." oninput="searchNotes()">
-  </header>
+  <body>
+    <header>
+      <h1>MyMind Notebook</h1>
+      <input id="searchBox" type="text" placeholder="Search notes..." oninput="searchNotes()">
+    </header>
 
-  <main>
-    <div id="notesContainer" class="notes-grid"></div>
-  </main>
+    <main>
+      <div id="notesContainer" class="notes-grid"></div>
+    </main>
 
-  <!-- Floating Add Button -->
-  <button id="addNoteBtn" onclick="openNoteModal()">＋</button>
+    <!-- Floating Add Button -->
+    <button id="addNoteBtn" onclick="openNoteModal()">＋</button>
 
- <!-- Note Modal -->
-<div id="noteModal" class="modal">
-  <div class="modal-content">
-    <h2>Create Note</h2>
-    <input id="noteTitle" placeholder="Title">
-    <textarea id="noteContent" placeholder="Write your note here..."></textarea>
-    <input id="noteTags" placeholder="Tags (comma separated)">
-    <input type="file" id="noteAttachment" multiple> <!-- File input -->
-    <div class="modal-actions">
-      <button onclick="saveNote()">Save</button>
-      <button onclick="closeNoteModal()">Cancel</button>
+    <!-- Note Modal -->
+    <div id="noteModal" class="modal">
+      <div class="modal-content">
+        <h2>Create Note</h2>
+        <input id="noteTitle" placeholder="Title">
+        <textarea id="noteContent" placeholder="Write your note here..."></textarea>
+        <input id="noteTags" placeholder="Tags (comma separated)">
+        <input type="file" id="noteAttachment" multiple>
+        <div class="modal-actions">
+          <button onclick="saveNote()">Save</button>
+          <button onclick="closeNoteModal()">Cancel</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-  <!-- Graph Section -->
-  <section class="graph-section">
-    <h2>Knowledge Graph</h2>
-    <div id="graph" class="mermaid"></div>
-    <div class="link-controls">
-      <select id="sourceNote"></select>
-      <select id="targetNote"></select>
-      <button onclick="addLink()">Link</button>
-    </div>
-  </section>
+    <!-- Graph Section -->
+    <section class="graph-section">
+      <h2>Knowledge Graph</h2>
+      <div id="graph" class="mermaid"></div>
+      <div class="link-controls">
+        <select id="sourceNote"></select>
+        <select id="targetNote"></select>
+        <button onclick="addLink()">Link</button>
+      </div>
+    </section>
 
-</body>
+    <!-- ✅ Move this to the bottom -->
+    <script type="module" src="app.js"></script>
+  </body>
 </html>
