@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header input {
+  padding: 8px 12px;
+  width: 250px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s;
+}
+
+header input:focus {
+  border: 1px solid #333;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.note-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+}
+
+.note-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.note-tags {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+#addNoteBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#addNoteBtn:hover {
+  transform: scale(1.1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content input, .modal-content textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.graph-section {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.link-controls {
+  margin-top: 10px;
+}
+.note-attachments {
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.note-attachments a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.note-attachments a:hover {
+  text-decoration: underline;
+}
+.note-attachments {
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.note-attachments a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.note-attachments a:hover {
+  text-decoration: underline;
+}
+
