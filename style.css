@@ -106,7 +106,8 @@ header input:focus {
   gap: 10px;
 }
 
-.modal-content input, .modal-content textarea {
+.modal-content input,
+.modal-content textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 8px;
@@ -129,6 +130,7 @@ header input:focus {
 .link-controls {
   margin-top: 10px;
 }
+
 .note-attachments {
   margin-top: 5px;
   font-size: 0.85rem;
@@ -142,17 +144,3 @@ header input:focus {
 .note-attachments a:hover {
   text-decoration: underline;
 }
-.note-attachments {
-  margin-top: 5px;
-  font-size: 0.85rem;
-}
-
-.note-attachments a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.note-attachments a:hover {
-  text-decoration: underline;
-}
-
